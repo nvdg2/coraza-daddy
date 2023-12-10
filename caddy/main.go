@@ -14,7 +14,7 @@ import (
 )
 
 func init() {
-    geo.RegisterDatabaseFromFile("geoip-database.mmdb", "city")
+    geo.RegisterDatabaseFromFile("GeoLite2-Country.mmdb", "city")
 }
 
 func main() {
