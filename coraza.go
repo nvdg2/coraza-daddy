@@ -9,8 +9,6 @@ import (
 	"path/filepath"
 	"strings"
 
-	_ "embed"
-    geo "github.com/corazawaf/coraza-geoip"
 
 	"github.com/caddyserver/caddy/v2"
 	"github.com/caddyserver/caddy/v2/caddyconfig/caddyfile"
@@ -25,7 +23,6 @@ import (
 )
 
 func init() {
-	geo.RegisterDatabaseFromFile("geoip-database.mmdb", "country")
 	caddy.RegisterModule(corazaModule{})
 	httpcaddyfile.RegisterHandlerDirective("coraza_waf", parseCaddyfile)
 }

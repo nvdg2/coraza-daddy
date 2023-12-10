@@ -8,7 +8,14 @@ import (
 	_ "github.com/caddyserver/caddy/v2/modules/standard"
 
 	_ "github.com/corazawaf/coraza-caddy/v2"
+
+	_ "embed"
+    geo "github.com/corazawaf/coraza-geoip"
 )
+
+func init() {
+    geo.RegisterDatabaseFromFile("geoip-database.mmdb", "city")
+}
 
 func main() {
 	caddycmd.Main()
